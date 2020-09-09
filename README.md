@@ -4,8 +4,10 @@
 - arduino nano (5v)
 - mg995 servo (5v)
 - hc-sr04 or us-025 ultrasonic sensor (3v/5v)
+- 6v psu (my servo doesn't work with enough strength in 5v)
 - 3d printed models
-- one recycled liquid soap dispenser 
+- one recycled liquid soap dispenser
+
 
 ## Wiring
 
