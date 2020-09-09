@@ -29,14 +29,14 @@ void loop(){
   int distance = readDistance();
     Serial.println(distance);
 
-  if (TRIGGER_DISTANCE > 10)
+  if (distance > TRIGGER_DISTANCE)
   {
     servo.write(45); // in degrees
     delay(500);
   }
-  if (TRIGGER_DISTANCE <= 10 && TRIGGER_DISTANCE >= 0)
+  if (distance <= TRIGGER_DISTANCE && distance >= 0)
   {
-    servo.write(0);
+    servo.write(0); // in degrees
     delay(500);
   }
 }
