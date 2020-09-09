@@ -19,7 +19,7 @@
 - 6v -> NANO VIN and SERVO VIN
 - GND -> NANO GND and SERVO GND
 
-## Notes
+## Servo calibration
 My servo was is from az-delivery brand, and they recommend these Servo.h (located on `libraries/Servo/src`) settings:
 
 ```
@@ -35,3 +35,10 @@ My servo was is from az-delivery brand, and they recommend these Servo.h (locate
 
 #define INVALID_SERVO         255     // flag indicating an invalid servo index
 ```
+
+## Distance calculation in ultrasonic sensor
+The speed of the sound is 340m/s, that's 0.034cm/µs.
+So space = time x speed.
+With sensor we're getting time in µs, but we need to divide this value by 2 since sound wave needs travel forward and bounce backward in order to reach the receiver. 
+
+For example: space = 140µs x 0.034cm/µs / 2; 
