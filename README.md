@@ -1,8 +1,11 @@
-# gel-auto-dispenser
+# Gel Auto Dispenser
+
 ## Parts
 - arduino nano (5v)
 - mg995 servo (5v)
 - hc-sr04 or us-025 ultrasonic sensor (3v/5v)
+- 3d printed models
+- one recycled liquid soap dispenser 
 
 ## Wiring
 
