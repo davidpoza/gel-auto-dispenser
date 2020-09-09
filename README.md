@@ -10,6 +10,14 @@
 
 
 ## Wiring
+- D6 -> SERVO INPUT
+- D7 -> US-025 ECHO PIN
+- D8 -> US-025 TRIGGER PIN
+- 3v -> US-025 VIN
+- GND -> US-025 GND
+
+- 6v -> NANO VIN and SERVO VIN
+- GND -> NANO GND and SERVO GND
 
 ## Notes
 My servo was is from az-delivery brand, and they recommend these Servo.h (located on `libraries/Servo/src`) settings:
