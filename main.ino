@@ -1,6 +1,5 @@
 #include <Servo.h>
 
-
 const int SENSOR_TRIG_PIN = 6;
 const int SENSOR_ECHO_PIN = 7;
 const int SERVO_PIN = 6;
@@ -13,10 +12,10 @@ int readDistance() {
   digitalWrite(SENSOR_TRIG_PIN, LOW);
   delayMicroseconds(2);
   digitalWrite(SENSOR_TRIG_PIN, HIGH);
-  delayMicroseconds(10);
+  delayMicroseconds(10); // depending on ultrasonic sensor datasheet
   digitalWrite(SENSOR_TRIG_PIN, LOW);
-  duration = pulseIn(SENSOR_ECHO_PIN, HIGH);
-  return duration / 53;
+  duration = pulseIn(SENSOR_ECHO_PIN, HIGH); // returns time SENSOR_ECHO_PIN needs for passing from LOW to HIGH in ms
+  return duration / 53; // I've made experimental calibration that varies a little from theoric calculation
 }
 
 void setup(){
