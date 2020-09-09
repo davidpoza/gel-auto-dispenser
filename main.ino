@@ -15,7 +15,7 @@ int readDistance() {
   delayMicroseconds(10); // depending on ultrasonic sensor datasheet
   digitalWrite(SENSOR_TRIG_PIN, LOW);
   duration = pulseIn(SENSOR_ECHO_PIN, HIGH); // returns time SENSOR_ECHO_PIN needs for passing from LOW to HIGH in ms
-  return duration / 53; // I've made experimental calibration that varies a little from theoric calculation
+  return duration / 53; // I've made experimental calibration that varies a little from theoric calculation duration in µs x 0.034 cm/µs
 }
 
 void setup(){
