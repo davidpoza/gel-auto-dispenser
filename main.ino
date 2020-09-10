@@ -34,7 +34,7 @@ void loop(){
     servo.write(45); // in degrees
     delay(500);
   }
-  if (distance <= TRIGGER_DISTANCE && distance >= 0)
+  if (distance <= TRIGGER_DISTANCE && distance > 0) // avoid out of range zero an negative values
   {
     servo.write(0); // in degrees
     delay(500);
