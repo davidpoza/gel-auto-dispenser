@@ -1,6 +1,6 @@
 #include <Servo.h>
 
-const int SENSOR_TRIG_PIN = 6;
+const int SENSOR_TRIG_PIN = 8;
 const int SENSOR_ECHO_PIN = 7;
 const int SERVO_PIN = 6;
 const int TRIGGER_DISTANCE = 10; // in cm
@@ -50,14 +50,14 @@ void setup(){
 
 void loop(){
   float distance = readDistance();
-  Serial.println(distance, 6);
+  Serial.println(distance, 10);
 
   if (distance > TRIGGER_DISTANCE || distance == 0)
   {
     servo.write(45); // in degrees
     delay(500);
-  } else if (distance <= TRIGGER_DISTANCE && distance > 0) // avoid out of range zero an negative values
-  {
+  } else if (distance <= TRIGGER_DISTANCE && distance > 0) { // avoid out of range zero an negative values
+    Serial.println("ACTIVADO");
     servo.write(0); // in degrees
     delay(500);
   }
