@@ -11,7 +11,7 @@ Servo servo;
 returns distance in cm
 applies filter, returning always middle value of three consecutive measurements.
 */
-int readDistance() {
+float readDistance() {
   long data[3] = {0, 0, 0};
   long mid = 0;
   for (int i = 0; i < 3; i++)
@@ -37,7 +37,7 @@ long getEchoLength() {
   digitalWrite(SENSOR_TRIG_PIN, HIGH);
   delayMicroseconds(10); // depending on ultrasonic sensor datasheet
   digitalWrite(SENSOR_TRIG_PIN, LOW);
-  return pulseIn(SENSOR_ECHO_PIN, HIGH); // returns time SENSOR_ECHO_PIN needs for passing from LOW to HIGH in ms
+  return pulseIn(SENSOR_ECHO_PIN, HIGH, 100000); // returns time SENSOR_ECHO_PIN needs for passing from LOW to HIGH in ms (it waits 100ms)
 }
 
 void setup(){
@@ -48,8 +48,8 @@ void setup(){
 }
 
 void loop(){
-  int distance = readDistance();
-    Serial.println(distance);
+  float distance = readDistance();
+  Serial.println(distance);
 
   if (distance > TRIGGER_DISTANCE || distance == 0)
   {
