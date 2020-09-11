@@ -17,6 +17,7 @@ float readDistance() {
   for (int i = 0; i < 3; i++)
   {
     data[i] = getEchoLength();
+    delay(5); // time space between measurements
   }
   // we calculate the middle value of array
   if ((data[0] <= data[1]) && (data[0] <= data[2])) { // first element is 0 index
@@ -49,7 +50,7 @@ void setup(){
 
 void loop(){
   float distance = readDistance();
-  Serial.println(distance);
+  Serial.println(distance, 6);
 
   if (distance > TRIGGER_DISTANCE || distance == 0)
   {
