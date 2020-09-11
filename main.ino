@@ -51,12 +51,11 @@ void loop(){
   int distance = readDistance();
     Serial.println(distance);
 
-  if (distance > TRIGGER_DISTANCE)
+  if (distance > TRIGGER_DISTANCE || distance == 0)
   {
     servo.write(45); // in degrees
     delay(500);
-  }
-  if (distance <= TRIGGER_DISTANCE && distance > 0) // avoid out of range zero an negative values
+  } else if (distance <= TRIGGER_DISTANCE && distance > 0) // avoid out of range zero an negative values
   {
     servo.write(0); // in degrees
     delay(500);
